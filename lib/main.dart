@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup/src/Location.dart';
+import 'package:flutter_login_signup/src/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'src/welcomePage.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
          ),
       ),
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: LocationPage(),
     );
   }
 }

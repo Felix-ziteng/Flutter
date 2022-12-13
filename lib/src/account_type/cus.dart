@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/src/account_type/usr.dart';
-import 'package:flutter_login_signup/src/func/admin/manageitem.dart';
-import 'package:flutter_login_signup/src/func/admin/manageusr.dart';
-import 'package:flutter_login_signup/src/func/usr/Borrow.dart';
-import 'package:flutter_login_signup/src/func/usr/Return.dart';
+import 'package:flutter_login_signup/src/loginPage.dart';
+import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_login_signup/src/Widget/bezierContainer.dart';
 
-import '../func/connection.dart';
+import '../func/item_list.dart';
 import '../func/search/search_try.dart';
-import '';
+import '../login_success/afterlogin.dart';
 
 class CusPage extends StatefulWidget {
-  CusPage({Key? key, this.title, this.cus}) : super(key: key);
+  CusPage({Key? key, this.title}) : super(key: key);
 
   final String? title;
-  final User? cus;
 
   @override
   _CusPageState createState() => _CusPageState();
@@ -47,7 +44,7 @@ class _CusPageState extends State<CusPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ManageuserPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -73,7 +70,7 @@ class _CusPageState extends State<CusPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ManageitemPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => itemPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -99,7 +96,7 @@ class _CusPageState extends State<CusPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => BorrowPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -125,7 +122,7 @@ class _CusPageState extends State<CusPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ReturnPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

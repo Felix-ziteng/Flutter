@@ -14,82 +14,65 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
+
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: ListView.builder(
-          itemCount: listData.length, itemBuilder: this._getListData),
-    );
-  }
+      body:
 
-  Widget _getListData(context, index) {
-    return ListTile(
-        title: Text(listData[index]["title"]),
-        subtitle: Text(listData[index]["author"]));
+                  CustomScrollView(
+                  slivers: [
+                    SliverAppBar(
+                      floating: true,
+                      pinned: true,
+                      snap: false,
+                      centerTitle: false,
+                      backgroundColor: Colors.transparent,
+
+                        title: Container(
+                          width: double.infinity,
+                          height: 40,
+                          color: Colors.white,
+
+                          child: Center(
+                            child: TextField(
+                              decoration: InputDecoration(
+
+                                  hintText: 'Searching',
+                                  prefixIcon: Icon(Icons.search),
+
+                                  suffixIcon: Icon(Icons.nfc_sharp),
+
+
+                              ),
+                            ),
+                          ),
+                        ),
+                    ),
+                    // Other Sliver Widgets
+                     SliverList(
+                        delegate: SliverChildListDelegate([
+
+                          Container(
+                            height: 400,
+                            child: Center(
+                              child: Text(
+                                'All the books list here',
+                                style: GoogleFonts.portLligatSans(
+                                  textStyle: Theme.of(context).textTheme.headline1,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xfff7892b),
+                                ),
+                              ),
+                            ),
+                          ),
+                       ]),
+                    ),
+                  ],
+                ),
+
+        );
+
+
   }
 }
-
-/*class _SearchPageState extends State<SearchPage> {
-  Widget _getListData(context, index) {
-    return ListTile(
-        title: Text(listData[index]["title"]),
-        subtitle: Text(listData[index]["author"]));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView.builder(
-        itemCount: listData.length, itemBuilder: this._getListData);
-  }
-}*/
-
-List listData = [
-  {
-    "title": 'Candy Shop',
-    "author": 'Mohamed Chahin, ',
-  },
-  {
-    "title": 'Childhood in a picture',
-    "author": 'Google',
-  },
-  {
-    "title": 'Alibaba Shop',
-    "author": 'Alibaba',
-  },
-  {
-    "title": 'Candy Shop',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Tornado',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },
-  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },  {
-    "title": 'Undo',
-    "author": 'Mohamed Chahin',
-  },
-
-  {
-    "title": 'white-dragon',
-    "author": 'Mohamed Chahin',
-  }
-];

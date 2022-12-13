@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_signup/src/func/usr/Return.dart';
+//import 'package:flutter_login_signup/src/func/search/Myhomepage.dart';
+import 'package:flutter_login_signup/src/loginPage.dart';
+import 'package:flutter_login_signup/src/login_success/afterlogin.dart';
+import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_login_signup/src/Widget/bezierContainer.dart';
 import 'package:flutter_login_signup/src/func/search/search_try.dart';
-import '../func/connection.dart';
-import '../func/usr/Borrow.dart';
+
 
 class UsrPage extends StatefulWidget {
-  UsrPage({Key? key, this.title, this.user}) : super(key: key);
+  UsrPage({Key? key, this.title}) : super(key: key);
 
   final String? title;
-  final User? user;
 
   @override
   _UsrPageState createState() => _UsrPageState();
@@ -41,7 +42,7 @@ class _UsrPageState extends State<UsrPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => BorrowPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -67,7 +68,7 @@ class _UsrPageState extends State<UsrPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ReturnPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

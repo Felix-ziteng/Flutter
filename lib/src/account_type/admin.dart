@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/src/account_type/usr.dart';
-import 'package:flutter_login_signup/src/func/admin/manageusr.dart';
-import 'package:flutter_login_signup/src/func/usr/Borrow.dart';
-import 'package:flutter_login_signup/src/func/usr/Return.dart';
+import 'package:flutter_login_signup/src/loginPage.dart';
+import 'package:flutter_login_signup/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_login_signup/src/Widget/bezierContainer.dart';
 
-import '../func/admin/managecus.dart';
 import '../func/search/search_try.dart';
-import '../func/connection.dart';
-import '../func/admin/manageitem.dart';
+import '../login_success/afterlogin.dart';
 
 class AdminPage extends StatefulWidget {
-  AdminPage({Key? key, this.title, this.admin}) : super(key: key);
+  AdminPage({Key? key, this.title}) : super(key: key);
 
   final String? title;
-  final User? admin;
 
   @override
   _AdminPageState createState() => _AdminPageState();
@@ -46,7 +42,7 @@ class _AdminPageState extends State<AdminPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ManagecusPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -73,7 +69,7 @@ class _AdminPageState extends State<AdminPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ManageuserPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -99,7 +95,7 @@ class _AdminPageState extends State<AdminPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ManageitemPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -125,7 +121,7 @@ class _AdminPageState extends State<AdminPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => BorrowPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -151,7 +147,7 @@ class _AdminPageState extends State<AdminPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ReturnPage(title: 'login')));
+            context, MaterialPageRoute(builder: (context) => AfterPage(title: 'login')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
